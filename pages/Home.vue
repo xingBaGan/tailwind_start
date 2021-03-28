@@ -1,7 +1,7 @@
 <template >
   <div>
     <navbar/>
-    <div>this is the index {{text}}</div>
+    <div>this is the index</div>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      text: hello()
+      text: "hello world"
     };
   }
 };

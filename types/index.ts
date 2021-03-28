@@ -1,114 +1,58 @@
-export type timestamp = string
-export type Array = []
-export interface users {
-  id: string
-  user_name: string
-  password: string
+export interface User {
   email: string
-  phone_number: string
-  last_visit_at: timestamp
-  registered_at: timestamp
-  avater: string
+  token: string
+  username: string
   bio: string
-  posts: Array
-  score: number
-  is_admin: boolean
-  threads: Array
-  followers: Array
-  is_tourist: boolean
+  image: string
 }
 
-export interface threads {
-  id: string
-  last_post_id: string
-  user_id: string
-  first_post_id: string
+export interface Profile {
+  username: string
+  bio: string
+  image: string
+  following: boolean
+}
 
-  forum_id: string
-  last_post_at: timestamp
-  published_at: timestamp
+export interface Author {
+  username: string
+  bio: string
+  image: string
+  following: boolean
+}
+
+export type Tag = string
+
+export interface Article {
   slug: string
   title: string
-  posts: Array
-  contributors: Array
-}
-
-
-export interface posts {
-  id: string
-  edited: string
-  publishedAt: timestamp
-  content: string
-  thread_id: string
-  user_id: string
-  replys: Array
-  likes: Array
-}
-
-export interface logs {
-  id: string
-  at: timestamp
-  by: string
-  moderated: boolean
-}
-
-export interface forums {
-  id: string
-  last_post_id: string
-  slug: string
-  threads: Array
-  category_id: string
-  game_id: string
-  posts: Array
-}
-
-export interface games {
-  id: string
-  bg_images: string
-  images: Array
-  videos: Array
-  name: string
   description: string
-  people_and_network: string
-  developer: string
-  publisher: string
-  lang: Array
-  platforms: Array
-  tags: Array
-  item_provider: Array
-  evaluations: Array
+  body: string
+  tagList: Tag[]
+  createdAt: string
+  updatedAt: string
+  favorited: boolean
+  favoritesCount: number
+  author: Author
 }
 
-export interface platforms {
-  id: string
-  name: string
-}
-export interface tags {
-  id: string
-  name: string
-}
-
-export interface evaluations {
-  id: string
-  post_id: string
-  star: number
+export interface Comment {
+  id: number
+  createdAt: string
+  updatedAt: string
+  body: string
+  author: Author
 }
 
-export interface categorys {
-  id: string
-  name: string
-  slug: string
-  forums: Array
+export type ResponseType<K extends string, V> = Promise<{ [P in K]: V }>
+
+export type ResponseTypes<T> = Promise<T>
+
+export type OptionalPick<T, K extends keyof T> = Pick<Partial<T>, K>
+
+export type Optional<T, K extends keyof T> = OptionalPick<T, K> & Omit<T, K>
+
+export type CustomErrors = {
+  errors: {
+    errorName: string[]
+  }
 }
-
-export interface complaints {
-  id: string
-  user_id: string
-  post_id: string
-  reason: string
-  comfirmed_by: string
-  comfirmed_at: timestamp
-  status: string
-}
-
-
