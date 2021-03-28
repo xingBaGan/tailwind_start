@@ -1,8 +1,9 @@
 <template >
-  <div>this is the index</div>
+  <div>this is the index {{text}}</div>
 </template>
 
 <script>
+import hello from "../api/index.ts";
 export default {
   components: {},
   head: {
@@ -14,6 +15,11 @@ export default {
         content: "Home page description"
       }
     ]
+  },
+  data() {
+    return {
+      text: hello()
+    };
   }
 };
 </script>
