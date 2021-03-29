@@ -1,12 +1,14 @@
 <template >
   <div>
-    <navbar/>
+    <!-- <navbar/> -->
+    {{list}}
+    {{articles}}
     <div>this is the index</div>
   </div>
 </template>
 
 <script>
-import hello from "../api/index.ts";
+import { useContext,ref,useFetch  } from '@nuxtjs/composition-api'
 import Navbar from "../components/TheNavbar.vue";
 export default {
   components: {
@@ -24,8 +26,23 @@ export default {
   },
   data() {
     return {
-      text: "hello world"
+      text: "hello world",
     };
+  },
+  setup(){
+    const { $repository } = useContext()
+    let list = ref([])
+       const { fetch, fetchState } = useFetch(async () => {
+        list.value = await $repository.forum.getList()
+    })
+    let articles = ref([])
+     useFetch(async () => {
+        articles.value = await $repository.article.getArticleList()
+    })
+    return {
+      list,
+      articles
+    }
   }
 };
 </script>

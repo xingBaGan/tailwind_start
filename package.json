@@ -9,7 +9,8 @@
     "sb": "nuxt storybook",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "lint": "yarn lint:js",
+    "json-server":"json-server db.json --port 3302"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",

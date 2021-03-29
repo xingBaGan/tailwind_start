@@ -41,7 +41,7 @@ type ArticleListResponse = ResponseTypes<{
 
 export const articleRepository = (axios: NuxtAxiosInstance) => ({
   getArticle(slug: Slug): ArticleResponse {
-    return axios.$get(`/articles/${slug}`)
+    return axios.$get(`/api/articles/${slug}`)
   },
   getArticleList({
     tag,
@@ -56,7 +56,7 @@ export const articleRepository = (axios: NuxtAxiosInstance) => ({
       ...(favorited && { favorited }),
     }
 
-    return axios.$get('/articles', {
+    return axios.$get('/api/articles', {
       params: { ...defaultParam, limit, offset },
     })
   },
@@ -64,7 +64,7 @@ export const articleRepository = (axios: NuxtAxiosInstance) => ({
     limit = LIMIT_LIST_ITEM,
     offset = 0,
   }: FeedArticleListRequest = {}): ArticleListResponse {
-    return axios.$get('/articles/feed', {
+    return axios.$get('/api/articles/feed', {
       params: {
         limit,
         offset,
@@ -72,19 +72,19 @@ export const articleRepository = (axios: NuxtAxiosInstance) => ({
     })
   },
   createArticle(payload: CreateArticleRequest): ArticleResponse | CustomErrors {
-    return axios.$post('/articles', { article: payload })
+    return axios.$post('/api/articles', { article: payload })
   },
   updateArticle(request: UpdateArticleRequest): ArticleResponse | CustomErrors {
-    return axios.$put(`/articles/${request.slug}`, { article: request.payload })
+    return axios.$put(`/api/articles/${request.slug}`, { article: request.payload })
   },
   deleteArticle(slug: Slug) {
-    return axios.$delete(`/articles/${slug}`)
+    return axios.$delete(`/api/articles/${slug}`)
   },
   favoriteArticle(slug: Slug): ArticleResponse {
-    return axios.$post(`/articles/${slug}/favorite`)
+    return axios.$post(`/api/articles/${slug}/favorite`)
   },
   unFavoriteArticle(slug: Slug): ArticleResponse {
-    return axios.$delete(`/articles/${slug}/favorite`)
+    return axios.$delete(`/api/articles/${slug}/favorite`)
   },
 })
 

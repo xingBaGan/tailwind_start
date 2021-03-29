@@ -11,6 +11,11 @@ import {
   TagRepository,
   UserRepository,
 } from '@/api'
+
+import{
+  forumRepository,
+  ForumRepository
+} from '@/api/main'
 import { ErrorType } from '@/constants'
 
 export type Repository = {
@@ -18,8 +23,9 @@ export type Repository = {
   comment: CommentRepository
   profile: ProfileRepository
   tag: TagRepository
-  user: UserRepository
-}
+  user: UserRepository,
+  forum:ForumRepository
+};
 
 /**
  * @see https://axios.nuxtjs.org
@@ -60,6 +66,7 @@ const createRepository = ({ app, $axios, redirect }: Context): Repository => {
     profile: profileRepository($axios),
     tag: tagRepository($axios),
     user: userRepository($axios),
+    forum:forumRepository($axios)
   }
 }
 

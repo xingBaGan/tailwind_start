@@ -1,6 +1,6 @@
 export type timestamp = string
 export type Array = []
-export interface users {
+export interface User{
   id: string
   user_name: string
   password: string
@@ -18,13 +18,13 @@ export interface users {
   is_tourist: boolean
 }
 
-export interface threads {
+export interface Thread{
   id: string
-  last_post_id: string
-  user_id: string
-  first_post_id: string
+  last_postId: string
+  userId: string
+  first_postId: string
 
-  forum_id: string
+  forumId: string
   last_post_at: timestamp
   published_at: timestamp
   slug: string
@@ -34,35 +34,35 @@ export interface threads {
 }
 
 
-export interface posts {
+export interface Post{
   id: string
   edited: string
   publishedAt: timestamp
   content: string
-  thread_id: string
-  user_id: string
+  threadId: string
+  userId: string
   replys: Array
   likes: Array
 }
 
-export interface logs {
+export interface Log{
   id: string
   at: timestamp
   by: string
   moderated: boolean
 }
 
-export interface forums {
+export interface Forum{
   id: string
-  last_post_id: string
+  last_postId: string
   slug: string
   threads: Array
-  category_id: string
-  game_id: string
+  categoryId: string
+  gameId: string
   posts: Array
 }
 
-export interface games {
+export interface Game{
   id: string
   bg_images: string
   images: Array
@@ -79,32 +79,32 @@ export interface games {
   evaluations: Array
 }
 
-export interface platforms {
+export interface Platform{
   id: string
   name: string
 }
-export interface tags {
+export interface Tag{
   id: string
   name: string
 }
 
-export interface evaluations {
+export interface Evaluation{
   id: string
-  post_id: string
+  postId: string
   star: number
 }
 
-export interface categorys {
+export interface Category{
   id: string
   name: string
   slug: string
   forums: Array
 }
 
-export interface complaints {
+export interface Complaint{
   id: string
-  user_id: string
-  post_id: string
+  userId: string
+  postId: string
   reason: string
   comfirmed_by: string
   comfirmed_at: timestamp

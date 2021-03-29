@@ -20,10 +20,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+   "@/assets/style.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/repository'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,8 +46,14 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
+  axios: {
+    // baseURL: 'https://conduit.productionready.io/api/',
+    proxy: true
+  },
+  proxy: {
+    '/api/':'https://conduit.productionready.io',
+    '/api2/': { target: 'http://localhost:3302', pathRewrite: {'^/api2/': ''}}
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
