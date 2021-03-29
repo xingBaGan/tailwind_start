@@ -15,13 +15,13 @@
     <nav class="navbar" :class="{'navbar-open':mobileNavOpen}">
       <ul v-if="user">
         <li class="navbar-user" v-click-outside="closeUserDropdown">
-          <a @click.prevent.stop="userDropdownOpen = !userDropdownOpen">
+          <!-- <a @click.prevent.stop="userDropdownOpen = !userDropdownOpen">
             <img :src="user.avatar" alt="" class="avatar-small">
             <span>
               {{user.name}}
               <img src="../assets/img/arrow-profile.svg" alt="" class="icon-profile">
             </span>
-          </a>
+          </a> -->
         </li>
         <!-- dropdown menu -->
         <!-- add class "active-drop" to show the dropdown -->
