@@ -2,13 +2,14 @@
   <div>
     <!-- <navbar/> -->
     {{list}}
-    {{articles}}
+    {{articleList}}
     <div>this is the index</div>
   </div>
 </template>
 
 <script>
-import { useContext,ref,useFetch  } from '@nuxtjs/composition-api'
+import {useArticleList} from '@/compositions'
+import { useContext,ref,useFetch,toRefs  } from '@nuxtjs/composition-api'
 import Navbar from "../components/TheNavbar.vue";
 export default {
   components: {
@@ -31,18 +32,29 @@ export default {
   },
   setup(){
     const { $repository } = useContext()
+    const {
+      state,
+      feedType,
+      getArticleList,
+      getFeedArticleList,
+      getArticleListByTag,
+      getArticleListByFeed,
+      toggleFavoriteArticleByList,
+    } = useArticleList()
+
     let list = ref([])
        const { fetch, fetchState } = useFetch(async () => {
         list.value = await $repository.forum.getList()
     })
-    let articles = ref([])
-     useFetch(async () => {
-        articles.value = await $repository.article.getArticleList()
-    })
+
     return {
       list,
-      articles
+      ...toRefs(state),
+      getArticleList
     }
+  },
+  beforeMount(){
+    this.articleList= this.getArticleList()
   }
 };
 </script>
