@@ -1,7 +1,7 @@
 <template >
   <div>
     <!-- <navbar/> -->
-    {{list}}
+    {{forumList}}
     {{articleList}}
     <div>this is the index</div>
   </div>
@@ -9,6 +9,7 @@
 
 <script>
 import {useArticleList} from '@/compositions'
+import {useForumList} from '@/compositions'
 import { useContext,ref,useFetch,toRefs  } from '@nuxtjs/composition-api'
 import Navbar from "../components/TheNavbar.vue";
 export default {
@@ -42,19 +43,25 @@ export default {
       toggleFavoriteArticleByList,
     } = useArticleList()
 
-    let list = ref([])
-       const { fetch, fetchState } = useFetch(async () => {
-        list.value = await $repository.forum.getList()
-    })
+    // let list = ref([])
+    //    const { fetch, fetchState } = useFetch(async () => {
+    //     list.value = await $repository.forum.getList()
+    // })
+    const {
+      state : action,
+      getForumList
+    } = useForumList()
 
     return {
-      list,
       ...toRefs(state),
-      getArticleList
+      ...toRefs(action),
+      getArticleList,
+      getForumList
     }
   },
   beforeMount(){
     this.articleList= this.getArticleList()
+    this.forumList = this.getForumList()
   }
 };
 </script>
