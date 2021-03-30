@@ -1,5 +1,4 @@
 import { reactive, ref, useContext } from '@nuxtjs/composition-api'
-// import {  } from '@/api/forumRepository'
 import { Forum} from '@/types/index2'
 
 type State = {

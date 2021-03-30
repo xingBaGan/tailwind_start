@@ -13,8 +13,8 @@
       <div class="bottom bar"></div>
     </div>
     <nav class="navbar" :class="{'navbar-open':mobileNavOpen}">
-      <ul v-if="user">
-        <li class="navbar-user" v-click-outside="closeUserDropdown">
+      <!-- <ul v-if="user"> -->
+        <!-- <li class="navbar-user" v-click-outside="closeUserDropdown"> -->
           <!-- <a @click.prevent.stop="userDropdownOpen = !userDropdownOpen">
             <img :src="user.avatar" alt="" class="avatar-small">
             <span>
@@ -22,10 +22,10 @@
               <img src="../assets/img/arrow-profile.svg" alt="" class="icon-profile">
             </span>
           </a> -->
-        </li>
+        <!-- </li> -->
         <!-- dropdown menu -->
         <!-- add class "active-drop" to show the dropdown -->
-        <div id="user-dropdown" :class="{'active-drop': userDropdownOpen}">
+        <!-- <div id="user-dropdown" :class="{'active-drop': userDropdownOpen}">
           <div class="triangle-drop"></div>
           <ul class="dropdown-menu">
             <li class="dropdown-menu-item">
@@ -46,15 +46,15 @@
             @click.prevent="$store.dispatch('auth/signOut').then(()=>{$router.push({name:'Home'})})"
           >Sign Out</a>
         </li>
-      </ul>
-      <ul v-else>
+      </ul> -->
+      <!-- <ul v-else>
         <li class="navbar-item">
           <router-link :to="{name: 'Login'}">Sign In</router-link>
         </li>
         <li class="navbar-item">
           <router-link :to="{name: 'Register'}">Register</router-link>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </header>
 </template>

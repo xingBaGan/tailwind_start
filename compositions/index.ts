@@ -1,6 +1,7 @@
 import useArticleSlug from './useArticleSlug'
 import useArticleList from './useArticleList'
 import useForumList from './useForumList'
+import useThreadList from './useThreadList'
 
 import useUtils from './useUtils'
 
@@ -9,4 +10,5 @@ export {
   useArticleList,
   useForumList,
   useUtils,
+  useThreadList
 }

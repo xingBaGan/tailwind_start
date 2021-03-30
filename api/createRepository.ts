@@ -1,15 +1,9 @@
 import { Context } from '@nuxt/types'
 import {
   articleRepository,
-  commentRepository,
-  profileRepository,
-  tagRepository,
-  userRepository,
+  threadRepository,
   ArticleRepository,
-  CommentRepository,
-  ProfileRepository,
-  TagRepository,
-  UserRepository,
+  ThreadRepository
 } from '@/api'
 
 import{
@@ -19,11 +13,8 @@ import{
 import { ErrorType } from '@/constants'
 
 export type Repository = {
-  article: ArticleRepository
-  comment: CommentRepository
-  profile: ProfileRepository
-  tag: TagRepository
-  user: UserRepository,
+  article: ArticleRepository,
+  thread:ThreadRepository,
   forum:ForumRepository
 };
 
@@ -62,11 +53,8 @@ const createRepository = ({ app, $axios, redirect }: Context): Repository => {
 
   return {
     article: articleRepository($axios),
-    comment: commentRepository($axios),
-    profile: profileRepository($axios),
-    tag: tagRepository($axios),
-    user: userRepository($axios),
-    forum:forumRepository($axios)
+    forum:forumRepository($axios),
+    thread:threadRepository($axios),
   }
 }
 

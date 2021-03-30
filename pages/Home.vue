@@ -1,20 +1,22 @@
 <template >
   <div>
     <!-- <navbar/> -->
-    {{forumList}}
-    {{articleList}}
-    <div>this is the index</div>
+    <thread-list :threadList="threadList"></thread-list>
+    <!-- {{articleList}} -->
+    <span @click="getThreadList()" class="block bg-blue-500 m-2 w-60 text-center text-white"> get the data</span>
   </div>
 </template>
 
 <script>
-import {useArticleList} from '@/compositions'
-import {useForumList} from '@/compositions'
+import ThreadList from '../components/ThreadList'
+import {useThreadList} from '@/compositions'
 import { useContext,ref,useFetch,toRefs  } from '@nuxtjs/composition-api'
 import Navbar from "../components/TheNavbar.vue";
 export default {
   components: {
-    Navbar: Navbar
+    Navbar: Navbar,
+    ThreadList,
+    ThreadList
   },
   head: {
     title: "Home page",
@@ -32,36 +34,14 @@ export default {
     };
   },
   setup(){
-    const { $repository } = useContext()
-    const {
-      state,
-      feedType,
-      getArticleList,
-      getFeedArticleList,
-      getArticleListByTag,
-      getArticleListByFeed,
-      toggleFavoriteArticleByList,
-    } = useArticleList()
-
-    // let list = ref([])
-    //    const { fetch, fetchState } = useFetch(async () => {
-    //     list.value = await $repository.forum.getList()
-    // })
     const {
       state : action,
-      getForumList
-    } = useForumList()
-
+      getThreadList
+    } = useThreadList()
     return {
-      ...toRefs(state),
       ...toRefs(action),
-      getArticleList,
-      getForumList
+      getThreadList
     }
-  },
-  beforeMount(){
-    this.articleList= this.getArticleList()
-    this.forumList = this.getForumList()
   }
 };
 </script>
