@@ -29,11 +29,68 @@
       "name": "Comedy",
       "slug": "comedy",
       "id": "-KvclpNRjpI5W-j0JQGU"
+    },
+    {
+      "forums": [
+        "-Kvclvu_Qd9QdS9ciqUl",
+        "-KvcmOcppNYK8NCesmB9"
+      ],
+      "name": "拳头游戏",
+      "slug": "拳头游戏",
+      "id": "3"
+    },
+    {
+      "forums": [
+        "1"
+      ],
+      "name": "手机游戏",
+      "slug": "手机游戏",
+      "id": "2"
+    },
+    {
+      "forums": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "name": "其他游戏",
+      "slug": "其他游戏",
+      "id": "1"
     }
   ],
   "forums": [
     {
-      "categoryId": "-KpR7vRkiRPpbUd_TVAR",
+      "gameId": "1",
+      "categoryId": "1",
+      "description": "Important announcements about the forum.",
+      "lastPostId": "-MOTz4aK_IBvVWFQNpDr",
+      "name": "Announcements",
+      "slug": "announcements",
+      "threads": [
+        "-KvgjI6bfbWYlbYV5ndr",
+        "-MOQA-nQ82sCeuiHARpp",
+        "-MOTz-i4sL9dLxrrBt2V"
+      ],
+      "id": "1"
+    },
+    {
+      "gameId": "2",
+      "categoryId": "1",
+      "description": "Important announcements about the forum.",
+      "lastPostId": "-MOTz4aK_IBvVWFQNpDr",
+      "name": "Announcements",
+      "slug": "announcements",
+      "threads": [
+        "-KvgjI6bfbWYlbYV5ndr",
+        "-MOQA-nQ82sCeuiHARpp",
+        "-MOTz-i4sL9dLxrrBt2V"
+      ],
+      "id": "2"
+    },
+    {
+      "gameId": "3",
+      "categoryId": "1",
       "description": "Important announcements about the forum.",
       "lastPostId": "-MOTz4aK_IBvVWFQNpDr",
       "name": "Announcements",
@@ -46,7 +103,8 @@
       "id": "-KpOx5Y4AqRr3sB4Ybwj"
     },
     {
-      "categoryId": "-KpR7vRkiRPpbUd_TVAR",
+      "gameId": "4",
+      "categoryId": "1",
       "description": "Ask your questions and drop your feedback here",
       "lastPostId": "-Kt2tjFsLkYONW35Or8c",
       "name": "Questions & Feedback",
@@ -57,7 +115,8 @@
       "id": "-KsjO4_W3W9Q2Z2UmuPr"
     },
     {
-      "categoryId": "-KsjPKA6hDuHlQK_lJWO",
+      "gameId": "5",
+      "categoryId": "2",
       "description": "All things pet related",
       "lastPostId": "-Kxx_kFpMHmonma6v_dW",
       "name": "Pets",
@@ -71,6 +130,7 @@
       "id": "-KsjPat5MWCx-dkjNVg8"
     },
     {
+      "gameId": "6",
       "categoryId": "-KsjPKA6hDuHlQK_lJWO",
       "description": "Petrol head? This is your section",
       "lastPostId": "-KvggXxCEyQQlq6Z3gn0",
@@ -87,6 +147,7 @@
       "id": "-KsjPjasLh0TFtZmffEo"
     },
     {
+      "gameId": "1",
       "categoryId": "-KvclpNRjpI5W-j0JQGU",
       "description": "Jokes & punchlines",
       "lastPostId": "-KxxMMqcs7LiaJKB_u6D",
@@ -100,6 +161,7 @@
       "id": "-Kvclvu_Qd9QdS9ciqUl"
     },
     {
+      "gameId": "1",
       "categoryId": "-KvclpNRjpI5W-j0JQGU",
       "description": "The big olmeme forum",
       "lastPostId": "-Kvcpl2lxtVztykr82Bv",
@@ -111,6 +173,7 @@
       "id": "-KvcmOcppNYK8NCesmB9"
     },
     {
+      "gameId": "1",
       "categoryId": "-KsjPKA6hDuHlQK_lJWO",
       "description": "",
       "threads": [
@@ -158,6 +221,7 @@
       "id": "-Kvd27XTayj4syOO56Qm"
     },
     {
+      "gameId": "1",
       "categoryId": "-KsjPKA6hDuHlQK_lJWO",
       "description": "Discuss your passion for food and cooking",
       "forums": {
@@ -190,6 +254,7 @@
       "id": "-KvfwiQYlnPXtzsDfkGZ"
     },
     {
+      "gameId": "1",
       "categoryId": "-KsjPKA6hDuHlQK_lJWO",
       "description": "The forum for anything",
       "name": "Miscellaneous",
@@ -205,7 +270,7 @@
         "VXjpr2WHa8Ux4Bnggym8QFLdv5C3"
       ],
       "firstPostId": "-KsjWehQ--apjDBwSBCZ",
-      "forumId": "-KsjPat5MWCx-dkjNVg8",
+      "forumId": "1",
       "lastPostAt": 1504040497,
       "lastPostId": "-KsjnAAjzfpznUVh4DSa",
       "posts": [
@@ -227,7 +292,7 @@
         "u4r8XCziZEWEXsj2UIKNHBoDh0n2"
       ],
       "firstPostId": "-KsjpzIeFTdcsBIPvUfQ",
-      "forumId": "-KsjO4_W3W9Q2Z2UmuPr",
+      "forumId": "1",
       "lastPostAt": 1504377762,
       "lastPostId": "-Kt2tjFsLkYONW35Or8c",
       "posts": [
@@ -248,7 +313,7 @@
     },
     {
       "firstPostId": "-Ksjv9T5uc5wP1BH2g7P",
-      "forumId": "-KsjPat5MWCx-dkjNVg8",
+      "forumId": "1",
       "lastPostAt": 1504042592,
       "lastPostId": "-Ksjv9T5uc5wP1BH2g7P",
       "posts": [
@@ -1087,7 +1152,7 @@
   ],
   "games": [
     {
-      "id": 12,
+      "id": 1,
       "image": " //pic1.cdncl.net/game/user_upload/yoge/c577499b1c23cee2657d84848666944b.jpg?imageView2/1/w/600/h/300 ",
       "title ": "Genesis Noir ",
       "publish_time ": "2021年3月26日 ",
